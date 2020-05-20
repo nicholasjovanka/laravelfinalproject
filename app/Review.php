@@ -2,17 +2,17 @@
 
 namespace App;
 
-use App\Model\Traits\HasCompositePrimaryKey;
+use Traits\HasCompositePrimaryKey;
 use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    use HasCompositePrimaryKey;
+    use Traits\HasCompositePrimaryKey;
     protected $fillable = [
         'userReview', 'user_id', 'game_id', 'userScore '
     ];
     protected $primaryKey =['user_id','game_id'];
-    protected $incrementing = false;
+    public $incrementing = false;
 
     public function user(){
         return $this->hasOne('App\User');

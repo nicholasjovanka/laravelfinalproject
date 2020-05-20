@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 Route::post('addgame','GameController@addGame');
+Route::post('addreview','ReviewController@addReview');
 Route::get('getgame','GameController@getAllGame');
 Route::group(['middleware' => ['auth:api']], function(){
     Route::get('email/resend', 'API\VerificationController@resend')->name('verification.resend'); //name is used for named routes
