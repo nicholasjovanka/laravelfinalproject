@@ -22,7 +22,10 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('email/resend', 'API\VerificationController@resend')->name('verification.resend'); //name is used for named routes
     Route::get('email/verify/{id}/{hash}', 'API\VerificationController@verify')->name('verification.verify');
     Route::get('details', 'API\UserController@details');
-    Route::post('addreview','ReviewController@addReview');
+    Route::post('addeditreview','ReviewController@addEditReview');
+    Route::delete('deletereviewadmin/{game_id}','ReviewController@deleteReviewAdmin');
+    Route::delete('deletereviewuser/{game_id}','ReviewController@deleteReviewUser');
+
 
 });
 Route::group(['middleware' => ['auth:api','verified']], function(){
