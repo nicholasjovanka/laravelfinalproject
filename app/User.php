@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use App\Model\Traits\HasCompositePrimaryKey;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +9,7 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, Notifiable, HasCompositePrimaryKey;
+    use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.

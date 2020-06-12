@@ -19,8 +19,11 @@ class CreateGamesTable extends Migration
             $table->string("gameImage")->nullable($value=true);
             $table->string('gameDescription',1000);
             $table->string('gameTrailer')->nullable($value=true);
+            $table->string('gamePublisher')->nullable($value=true);
+            $table->date('gameReleaseDate')->nullable($value=true);
             $table->json('platform')->nullable($value=true);
             $table->boolean('onSteam')->nullable($value=true);
+            $table->string('steamId')->nullable($value=true);
             $table->integer('AgeRating')->unsigned()->nullable($value=true);
             $table->timestamps();
         });

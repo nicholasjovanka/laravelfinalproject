@@ -51,27 +51,25 @@ class VerificationController extends Controller
      *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function verify(Request $request)
-    {
-        if (! hash_equals((string) $request->route('id'), (string) $request->user()->getKey())) {
-            throw new AuthorizationException;
-        }
+    public function verify(Request $request) {
+        auth()->loginUsingId($request->route('id'));
 
-
-        if (! hash_equals((string) $request->route('hash'), sha1($request->user()->getEmailForVerification()))) {
+        if ($request->route('id') != $request->user()->getKey()) {
             throw new AuthorizationException;
         }
 
         if ($request->user()->hasVerifiedEmail()) {
-            return response(['message'=>'Email Already Verified']);
+
+            return response(['message'=>'Already verified']);
+
+            // return redirect($this->redirectPath());
         }
 
         if ($request->user()->markEmailAsVerified()) {
             event(new Verified($request->user()));
         }
 
-
-        return response(['message'=>'Successfully verified']);
+         return redirect('http://localhost:4200/homepage');
     }
 
     /**
@@ -96,6 +94,7 @@ class VerificationController extends Controller
         if ($request->user()->hasVerifiedEmail()) {
             return response(['message'=>'Already verified']);
         }
+
 
         $request->user()->sendEmailVerificationNotification();
 
