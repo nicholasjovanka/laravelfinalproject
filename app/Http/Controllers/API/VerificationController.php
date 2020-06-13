@@ -69,7 +69,7 @@ class VerificationController extends Controller
             event(new Verified($request->user()));
         }
 
-         return redirect('http://localhost:4200/homepage');
+         return redirect('https://api.threviews.me//homepage');
     }
 
     /**
