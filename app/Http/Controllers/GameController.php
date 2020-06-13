@@ -27,7 +27,7 @@ class GameController extends Controller
     if ($request->hasFile('gameImage')){
         $this->setGamePicture($request, $game->id);
     } else{
-        $game->gameImage = 'gameimages/default_game_image.jpg';
+        $game->gameImage = '/gameimages/default_game_image.jpg';
         $game->save();
     }
 
@@ -61,7 +61,7 @@ class GameController extends Controller
 
     public function getGameImage($id){
         $filename = Game::find($id);
-        return Storage::disk('local')->download($filename->gameImage);
+        return response()->download(public_path($filename->gameImage),'Game Image');
     }
 
     public function filterGameName(Request $request){
@@ -102,7 +102,7 @@ class GameController extends Controller
         $game = Game::find($id);
         $filepath = $game->gameImage;
         if ($filepath !== 'gameimages/default_game_image.jpg'){
-            Storage::disk('local')->delete($filepath);
+           File2::delete(public_path($filepath));
         }
         $game->delete();
         return response('Sucessful Delete',200);
@@ -122,17 +122,13 @@ class GameController extends Controller
                 $constraint->aspectRatio();
             });
             $filename= uniqid('gameImage');
-            $temporarypath= "/gameImage/".$filename.'.'.$extension;
-            $img->save(public_path($temporarypath),95);
-            $imagefile = new File(public_path($temporarypath));
-            $path = Storage::disk('local')->put('gameimages',$imagefile);
-            $img->destroy();
-            File2::delete(public_path($temporarypath));
+            $path= "/gameImage/".$filename.'.'.$extension;
+            $img->save(public_path($path),95);
             $game = Game::find($id);
             if(!is_null($game->gameImage)){
                 $oldpath = $game->gameImage;
-                if($oldpath !== 'gameimages/default_game_image.jpg') {
-                    Storage::disk('local')->delete($oldpath);
+                if($oldpath !== '/gameimages/default_game_image.jpg') {
+                   File2::delete(public_path($oldpath));
                 }
             }
             $game->gameImage=$path;

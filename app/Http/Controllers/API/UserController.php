@@ -89,17 +89,13 @@ class UserController extends Controller
                 $constraint->aspectRatio();
             });
             $filename= uniqid('userProfile');
-            $temporarypath= "/userprofile/".$filename.'.'.$extension;
-            $img->save(public_path($temporarypath));
-            $imagefile = new File(public_path($temporarypath));
-            $path = Storage::disk('local')->put('userprofile',$imagefile);
-            $img->destroy();
-            File2::delete(public_path($temporarypath));
+            $path= "/userprofile/".$filename.'.'.$extension;
+            $img->save(public_path($path));
             $user = User::find(Auth::user()->id);
             if(!is_null($user->userImage)){
                 $oldpath = $user->userImage;
-                if($oldpath !== 'userprofile/default_user_picture.png') {
-                    Storage::disk('local')->delete($oldpath);
+                if($oldpath !== '/userprofile/default_user_picture.png') {
+                File2::delete(public_path($oldpath));
                 }
             }
             $user->userImage=$path;
@@ -114,6 +110,7 @@ class UserController extends Controller
     }
 
 
+
     public function verifyemail(){
         $isverified = Auth::user()->email_verified_at;
         return response()->json(['email_verified_at' => $isverified ],200);
@@ -125,8 +122,7 @@ class UserController extends Controller
 //        $data = json_decode($collection,true);
 //        return $data[0]['id'];
         $filename = User::where('email', Auth::user()->email)->first();
-//        return response()->download(public_path($filename->userImage),'User Image');
-        return Storage::disk('local')->download($filename->userImage);
+        return response()->download(public_path($filename->userImage),'User Image');
     }
 
     public function updateProfile(Request $request){
