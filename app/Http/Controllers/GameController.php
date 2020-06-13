@@ -122,7 +122,7 @@ class GameController extends Controller
                 $constraint->aspectRatio();
             });
             $filename= uniqid('gameImage');
-            $path= "/gameImage/".$filename.'.'.$extension;
+            $path= "/gameimages/".$filename.'.'.$extension;
             $img->save(public_path($path),95);
             $game = Game::find($id);
             if(!is_null($game->gameImage)){
