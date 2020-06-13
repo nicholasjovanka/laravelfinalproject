@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd9f5314-7a2d-4611-a134-e8a10a451f98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/userprofile/userProfile5eb7cd6af33f6.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,11 +152,11 @@
       <recent name="D:\laragon\www\laraveltest\app" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laravelfinalproject\finalproject\laravelfinalproject\public\gameimages" />
       <recent name="D:\laravelfinalproject\finalproject\laravelfinalproject\public\userprofile" />
       <recent name="D:\laravelfinalproject\finalproject\laravelfinalproject\storage\app\userprofile" />
       <recent name="D:\laravelfinalproject\laravelfinalproject\storage\app\userprofile" />
       <recent name="D:\laravelfinalproject\laravelfinalproject\public\userprofile" />
-      <recent name="D:\laragon\www\laraveltest\app\Http\Controllers\API" />
     </key>
   </component>
   <component name="RunManager">
@@ -243,7 +239,7 @@
       <workItem from="1591951815211" duration="5000" />
       <workItem from="1592060389156" duration="200000" />
       <workItem from="1592060614574" duration="80000" />
-      <workItem from="1592061070180" duration="4289000" />
+      <workItem from="1592061070180" duration="4644000" />
     </task>
     <servers />
   </component>
