@@ -101,7 +101,7 @@ class GameController extends Controller
     public function deleteGame($id){
         $game = Game::find($id);
         $filepath = $game->gameImage;
-        if ($filepath !== 'gameimages/default_game_image.jpg'){
+        if ($filepath !== '/gameimages/default_game_image.jpg'){
            File2::delete(public_path($filepath));
         }
         $game->delete();
