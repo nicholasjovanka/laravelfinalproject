@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd9f5314-7a2d-4611-a134-e8a10a451f98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/VerificationController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +240,8 @@
       <workItem from="1591951815211" duration="5000" />
       <workItem from="1592060389156" duration="200000" />
       <workItem from="1592060614574" duration="80000" />
-      <workItem from="1592061070180" duration="6817000" />
+      <workItem from="1592061070180" duration="7061000" />
+      <workItem from="1592132569452" duration="18000" />
     </task>
     <servers />
   </component>
@@ -252,7 +253,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -294,10 +297,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400/-1366.232.1366.728@0.0.2560.1400" timestamp="1592060693860" />
-    <state x="976" y="524" width="604" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1592061069656">
+    <state x="976" y="524" width="604" height="352" key="com.intellij.ide.util.TipDialog" timestamp="1592132571636">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="524" width="604" height="352" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1366.232.1366.728@0.0.2560.1400" timestamp="1592061069656" />
+    <state x="976" y="524" width="604" height="352" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1366.232.1366.728@0.0.2560.1400" timestamp="1592132571636" />
     <state x="1089" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589720840409">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
