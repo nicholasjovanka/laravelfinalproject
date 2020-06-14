@@ -27,6 +27,7 @@ Route::get('getallreview/{id}','ReviewController@getAllReview');
 Route::get('getusername/{id}', 'API\UserController@username');
 Route::get('calculateScore/{id}', 'ReviewController@CalculateScore');
 Route::get('email/verify/{id}/{hash}', 'API\VerificationController@verify')->name('verification.verify');
+Route::post('getgameid', 'GameController@getGameId');
 Route::group(['middleware' => ['auth:api','verified']], function(){
     Route::get('isAdmin', 'API\UserController@isAdmin');
     Route::post('updateuserprofile', 'API\UserController@updateProfile');

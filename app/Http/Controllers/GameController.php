@@ -72,6 +72,15 @@ class GameController extends Controller
         }
     }
 
+    public function getGameId(Request $request){
+       $id = Game::where('gameName', $request->gameName)->first();
+        $object = [
+            'id'=> $id->id,
+            'gameName'=> $id->gameName,
+        ];
+        return response($object,200);
+    }
+
     public function updateGame(Request $request, $id){
         $game = Game::find($id);
         if($game->gameName !== $request->gameName){
